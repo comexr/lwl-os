@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: lwlOS
+name: lwl-os
 # description will be included in the image's metadata
 description: Custom distro built for laptops from Laptop With Linux.
 
