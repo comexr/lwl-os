@@ -20,6 +20,7 @@ modules:
     repos:
     install:
       - hidapi #Dependency for BIOS updates
+      - PackageKit #Dependency for cosmic-store
     remove:
       - firefox
       - firefox-langpacks # also remove firefox dependency
