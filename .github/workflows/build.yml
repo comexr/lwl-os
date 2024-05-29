@@ -6,9 +6,9 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
+      
   pull_request:
   workflow_dispatch: # allow manually triggering builds
-
 jobs:
   bluebuild:
     name: Build Custom Image
@@ -23,16 +23,8 @@ jobs:
         recipe:
           # !! Add your recipes here 
           - recipe.yml
-    env:
-      #ARCH: x86_64
-      IMAGE_NAME: lwl-os
-      IMAGE_REPO: ghcr.io/comexr
-      IMAGE_TAG: latest
-      #VERSION: 1.0.0
-      VARIANT: default
-
     steps:
-      # the build is fully handled by the reusable github action
+       # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.5
         with:
@@ -40,29 +32,3 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
-
-      # Build ISO
-      - name: Build ISO
-        uses: jasonn3/build-container-installer@main
-        id: build
-        with:
-          #arch: ${{ env.ARCH }}
-          image_name: ${{ env.IMAGE_NAME }}
-          image_repo: ${{ env.IMAGE_REPO }}
-          image_tag: ${{ env.IMAGE_TAG }}
-          #version: ${{ env.VERSION }}
-          variant: ${{ env.VARIANT }}
-          iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}-${{ env.VERSION }}.iso
-
-      # Upload ISO as artifact
-      - name: Upload ISO as artifact
-        id: upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ steps.build.outputs.iso_name }}
-          path: |
-            ${{ steps.build.outputs.iso_path }}
-            ${{ steps.build.outputs.iso_path }}-CHECKSUM
-          if-no-files-found: error
-          retention-days: 0
-          compression-level: 0
