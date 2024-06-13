@@ -21,6 +21,7 @@ modules:
   - type: rpm-ostree
     repos:
     install:
+      - age #Needed for chezmoi encryption
       - hidapi #Dependency for BIOS updates
       - PackageKit #Dependency for cosmic-store
     remove:
