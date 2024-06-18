@@ -39,7 +39,7 @@ modules:
 
   - type: script
     snippets:
-      - "git config --global user.email 'info@comexr.com' && git config --global user.name 'comexr' && git config --global url.git@github.com:.insteadOf https://github.com/" #Set GitHub config
+      - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr' && git config --system url.git@github.com:.insteadOf https://github.com/" #Set GitHub config
 
   - type: chezmoi
     # Git repository to initialize
