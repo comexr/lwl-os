@@ -34,6 +34,7 @@ modules:
       # If no repo information is specified, Flathub will be used by default
       install:
         - org.mozilla.firefox
+        - org.gnome.Evolution
       remove:
 
   - type: chezmoi
