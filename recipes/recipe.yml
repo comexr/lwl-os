@@ -39,7 +39,7 @@ modules:
 
   - type: chezmoi
     # Git repository to initialize
-    repository: "https://github.com/comexr/NS50AU" # Required - Default: n/a  - Expects type: string
+    repository: "https://github.com/comexr/dotfiles" # Required - Default: n/a  - Expects type: string
     # # Whether to enable the modules services globally for all users, if false users need to enable services manually
     # all-users: true # Optional - Default: true - Expects type: boolean
     # # Dotfiles will be updated with this interval
