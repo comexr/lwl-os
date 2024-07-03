@@ -37,9 +37,9 @@ modules:
         - org.gnome.Evolution
       remove:
 
-  # - type: chezmoi
-  #   # Git repository to initialize
-  #   repository: "https://github.com/comexr/dotfiles" # Required - Default: n/a  - Expects type: string
+   - type: chezmoi
+     # Git repository to initialize
+     repository: "https://github.com/comexr/dotfiles" # Required - Default: n/a  - Expects type: string
     # # Whether to enable the modules services globally for all users, if false users need to enable services manually
     # all-users: true # Optional - Default: true - Expects type: boolean
     # # Dotfiles will be updated with this interval
@@ -55,4 +55,4 @@ modules:
 
   - type: script
     snippets:
-      - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr' && git config --system url.git@github.com:.insteadOf https://github.com/" #Set GitHub config options (in /etc/gitconfig)
+      - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr'" #&& git config --system url.git@github.com:.insteadOf https://github.com/" #Set GitHub config options (in /etc/gitconfig)
