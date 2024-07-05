@@ -1,6 +1,9 @@
 title: Welcome to lwlOS
 properties:
   mode: "run-once"
+actions:
+  post:
+  - run: git config --system url.git@github.com:.insteadOf https://github.com/
 screens:
   first-screen:
     source: yafti.screen.title
@@ -34,6 +37,12 @@ screens:
              - Steam: com.valvesoftware.Steam
              - Spotify: com.spotify.Client
              - PuTTY: uk.org.greenend.chiark.sgtatham.putty
+
+  home:
+    source: yafti.screen.console
+    values:
+      title: Setup home directory
+
              
   final-screen:
     source: yafti.screen.title
