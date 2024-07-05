@@ -22,7 +22,7 @@ modules:
     repos:
     install:
       - age #Needed for chezmoi encryption
-      - autoexpect #Interactive prompts automation
+      - expect #Interactive prompts automation
       - hidapi #Dependency for BIOS updates
       - PackageKit #Dependency for cosmic-store
     remove:
