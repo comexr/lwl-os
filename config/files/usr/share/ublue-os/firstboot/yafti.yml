@@ -38,12 +38,6 @@ screens:
              - Spotify: com.spotify.Client
              - PuTTY: uk.org.greenend.chiark.sgtatham.putty
 
-  password-prompt::
-    source: yafti.screen.console
-    values:
-      title: "Enter passphrase"
-      passphrase: 
-
   password-prompt:
     source: yafti.screen.consent
     values:
