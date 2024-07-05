@@ -57,4 +57,4 @@ modules:
     snippets:
       - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr'" #&& git config --system url.git@github.com:.insteadOf https://github.com/" #Set GitHub config options (in /etc/gitconfig)
   
- # - type: yafti
+  - type: yafti

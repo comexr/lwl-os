@@ -34,6 +34,7 @@ screens:
              - Steam: com.valvesoftware.Steam
              - Spotify: com.spotify.Client
              - PuTTY: uk.org.greenend.chiark.sgtatham.putty
+             
   final-screen:
     source: yafti.screen.title
     values:
