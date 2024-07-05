@@ -38,10 +38,22 @@ screens:
              - Spotify: com.spotify.Client
              - PuTTY: uk.org.greenend.chiark.sgtatham.putty
 
-  home:
+  password-prompt::
     source: yafti.screen.console
     values:
-      title: Setup home directory
+      title: "Enter passphrase"
+      passphrase: 
+
+  password-prompt:
+    source: yafti.screen.consent
+    values:
+      title: "Wachtwoord vereist"
+      description: |
+        Voer alstublieft uw wachtwoord in voor de volgende actie.
+        Let op: Het wachtwoord zal zichtbaar zijn tijdens het typen.
+      actions:
+        - run: read -p "Wachtwoord: " PASSPHRASE && echo "$PASSPHRASE" | chezmoi apply
+
 
              
   final-screen:
