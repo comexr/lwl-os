@@ -12,6 +12,7 @@ screens:
       icon: "/usr/share/fedora-logos/fedora_darkbackground.svg"
       description: |
         A custom distro tailored for laptops from Laptop With Linux.
+        
   applications:
     source: yafti.screen.package
     values:
@@ -41,15 +42,15 @@ screens:
   password-prompt:
     source: yafti.screen.consent
     values:
-      title: "Wachtwoord vereist"
+      title: "Passphrase required"
       description: |
-        Voer alstublieft uw wachtwoord in voor de volgende actie.
-        Let op: Het wachtwoord zal zichtbaar zijn tijdens het typen.
+        Please enter your passphrase in the next step
       actions:
-        - run: read -p "Wachtwoord: " PASSPHRASE && echo "$PASSPHRASE" | chezmoi apply
+      - run: passphrase=$(zenity --password) && \
+             expect -c "spawn chezmoi apply; expect \"Enter passphrase:\"; send \"${passphrase}\r\"; expect eof"
 
 
-             
+  
   final-screen:
     source: yafti.screen.title
     values:
