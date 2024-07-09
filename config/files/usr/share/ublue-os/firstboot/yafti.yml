@@ -49,8 +49,6 @@ screens:
       - run: passphrase=$(zenity --password) && \
              expect -c "spawn chezmoi apply; expect \"Enter passphrase:\"; send \"${passphrase}\r\"; expect eof"
 
-
-  
   final-screen:
     source: yafti.screen.title
     values:
