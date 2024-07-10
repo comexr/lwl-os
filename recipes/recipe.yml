@@ -25,6 +25,7 @@ modules:
       - expect #Interactive prompts automation
       - hidapi #Dependency for BIOS updates
       - PackageKit #Dependency for cosmic-store
+      - zenity #Interactive prompts
     remove:
       - firefox
       - firefox-langpacks # also remove firefox dependency
