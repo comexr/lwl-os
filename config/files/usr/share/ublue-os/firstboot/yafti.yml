@@ -11,40 +11,14 @@ screens:
       title: "Welcome to lwlOS"
       icon: "/usr/share/fedora-logos/fedora_darkbackground.svg"
       description: |
-        A custom distro tailored for laptops from Laptop With Linux.
-        
-  applications:
-    source: yafti.screen.package
-    values:
-      title: Application Installer
-      show_terminal: true
-      package_manager: yafti.plugin.flatpak
-      package_manager_defaults:
-        user: true
-        system: false
-      groups:
-        Additional Software:
-          description: Additional applications
-          default: false
-          packages:
-             - Firefox: org.mozilla.firefox
-             - Thunderbird: org.mozilla.Thunderbird
-             - LibreOffice: org.libreoffice.LibreOffice
-             - Brave Browser: com.brave.Browser
-             - Gimp: org.gimp.GIMP
-             - Skype: com.skype.Client
-             - VLC: org.videolan.VLC
-             - Audacity: org.audacityteam.Audacity
-             - Steam: com.valvesoftware.Steam
-             - Spotify: com.spotify.Client
-             - PuTTY: uk.org.greenend.chiark.sgtatham.putty
+        A minimal linux distro based on Fedora Atomic
 
   password-prompt:
     source: yafti.screen.consent
     values:
       title: "Passphrase required"
       description: |
-        Please enter your passphrase in the next step
+        Please enter your passphrase to decrypt the dotfiles repo.
       actions:
       - run: passphrase=$(zenity --password) && \
              expect -c "spawn chezmoi apply; expect \"Enter passphrase:\"; send \"${passphrase}\r\"; expect eof"
@@ -54,10 +28,5 @@ screens:
     values:
       title: "All done!"
       icon: "/usr/share/fedora-logos/fedora_darkbackground.svg"
-      links:
-        - "Install More Applications":
-            run: /usr/bin/gnome-software
-        - "Website":
-            run: /usr/bin/xdg-open https://laptopwithlinux.com
       description: |
-        Thanks for setting up lwlOS, we hope you enjoy it!
+        Done setting up!
