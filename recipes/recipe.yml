@@ -23,6 +23,7 @@ modules:
     install:
       - age #Needed for chezmoi encryption
       - expect #Interactive prompts automation
+      - grubby #Tool to update grub parameters (used by selinux.sh)
       - hidapi #Dependency for BIOS updates
       - PackageKit #Dependency for cosmic-store
       - zenity #Interactive prompts
@@ -59,4 +60,5 @@ modules:
 
   - type: script
     snippets:
-      - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr'" #&& git config --system url.git@github.com:.insteadOf https://github.com/" #Set GitHub config options (in /etc/gitconfig)
+      - "git config --system user.email 'info@comexr.com' && git config --system user.name 'comexr'" #Set GitHub config options (in /etc/gitconfig)
+      - "sudo grubby --update-kernel ALL --args selinux=0" #Temporarily disable SELinux
