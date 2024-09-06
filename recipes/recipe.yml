@@ -28,6 +28,7 @@ modules:
       - expect #Interactive prompts automation
       - grubby #Tool to update grub parameters (used by selinux.sh)
       - hidapi #Dependency for BIOS updates
+      - lwl-drivers
       - PackageKit #Dependency for cosmic-store
       - zenity #Interactive prompts
     remove:
