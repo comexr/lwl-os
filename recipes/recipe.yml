@@ -20,10 +20,7 @@ modules:
 
   - type: rpm-ostree
     repos:
-     # - https://comexr.github.io/comexr.repo
-    keys:
-     
-     # - https://comexr.github.io/comexr.asc
+     - https://comexr.github.io/comexr.repo
     install:
       - age #Needed for chezmoi encryption
       - expect #Interactive prompts automation
