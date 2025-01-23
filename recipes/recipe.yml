@@ -30,9 +30,6 @@ modules:
       - hidapi #Dependency for BIOS updates
       #- lwl-drivers #Drivers for Tongfang laptops - not working at the moment
       - zenity #Interactive prompts
-    remove:
-      - firefox
-      - firefox-langpacks # also remove firefox dependency
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
