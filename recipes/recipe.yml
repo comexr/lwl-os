@@ -26,6 +26,7 @@ modules:
     install:
       - age #Needed for chezmoi encryption
       - expect #Interactive prompts automation
+      - git
       - grubby #Tool to update grub parameters (used by selinux.sh)
       - hidapi #Dependency for BIOS updates
       #- lwl-drivers #Drivers for Tongfang laptops - not working at the moment
