@@ -20,11 +20,13 @@ modules:
 
   - type: rpm-ostree
     repos:
+     - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-$(rpm -E %fedora)/ryanabx-cosmic-epoch-fedora-$(rpm -E %fedora).repo
      - https://comexr.github.io/comexr.repo
     keys:
      - https://comexr.github.io/comexr.asc
     install:
       - age #Needed for chezmoi encryption
+      - cosmic-desktop #Desktop environment
       - expect #Interactive prompts automation
       - git
       - grubby #Tool to update grub parameters (used by selinux.sh)
