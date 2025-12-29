@@ -39,4 +39,20 @@ jobs:
           pr_event_number: ${{ github.event.number }}
 
           # enabled by default, disable if your image is small and you want faster builds
-          maximize_build_space: true
+          maximize_build_space: false
+
+      - name: Build ISO
+        id: build
+        uses: ublue-os/titanoboa@main
+        with:
+          image-ref: ghcr.io/comexr/lwl-os
+          #flatpaks-list: ${{ github.workspace }}/flatpaks/system-flatpaks.list
+          #hook-post-rootfs: ${{ github.workspace }}/iso_files/configure_iso_anaconda.sh
+          kargs: ""
+          builder-distro: fedora
+
+      - name: Rename and Checksum ISO
+        run: |
+          mkdir -p output
+          mv ${{ steps.build.outputs.iso-dest }} output/lwl-os.iso
+          (cd output && sha256sum my-custom-image.iso | tee lwl-os.iso-CHECKSUM)
